@@ -1,0 +1,45 @@
+{
+  "experiment_id": "sample-coding-tasks",
+  "name": "Sample deterministic coding tasks",
+  "description": "A reproducible demonstration of weighted scoring using configured literal responses, not commercial model results.",
+  "cases": [
+    {
+      "case_id": "hello-world",
+      "prompt": "Write a Python statement that prints hello.",
+      "expected_output": "print('hello')",
+      "weight": 1
+    },
+    {
+      "case_id": "sum-function",
+      "prompt": "Write a function named add that returns the sum of a and b.",
+      "expected_output": "def add(a, b):\n    return a + b",
+      "weight": 2
+    },
+    {
+      "case_id": "empty-list",
+      "prompt": "Write a Python expression that creates an empty list.",
+      "expected_output": "[]",
+      "weight": 1
+    }
+  ],
+  "adapters": [
+    {
+      "name": "baseline_reference",
+      "type": "deterministic_baseline",
+      "responses": {
+        "hello-world": "print('hello')",
+        "sum-function": "def add(a, b):\n    return a + b",
+        "empty-list": "[]"
+      }
+    },
+    {
+      "name": "baseline_variant",
+      "type": "deterministic_baseline",
+      "responses": {
+        "hello-world": "print('hello')",
+        "sum-function": "def add(a, b):\n    return a + b",
+        "empty-list": "list()"
+      }
+    }
+  ]
+}
